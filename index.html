@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+		<script type="text/javascript">
+			$(function(){
+            	$.ajax({
+                	url:"http://localhost:3000",
+                	type:"POST",
+                	success:function(e){
+                    	var mmp = "";
+                    	for(i in e){
+                    		mmp+="<tr><td>"+e[i].name+"</td><td>"+e[i].age+"</td></tr>"
+                    	}
+                    	$('table').html(mmp);
+                	}
+            	})
+			});
+		</script>
+		<style>
+			tr,td{
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			
+		</table>
+	</body>
+</html>
